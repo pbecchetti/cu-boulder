@@ -1,0 +1,25 @@
+{
+  "votes": [
+    {
+      "id": 1,
+      "question": "Do you live in Boulder?"
+    },
+    {
+      "id": 2,
+      "question": "Are you a student?"
+    },
+    {
+      "id": 3,
+      "question": "Do you like to play soccer?"
+    },
+    {
+      "id": 4,
+      "question": "Do you think that ?"
+    },
+    {
+      "id": 5,
+      "question": "popok?"
+    }
+  ],
+  "participants": []
+}
