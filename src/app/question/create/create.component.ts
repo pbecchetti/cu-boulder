@@ -10,6 +10,8 @@ import { QuestionService } from 'src/app/core/services/question.service';
 export class CreateComponent {
   questionForm!: FormGroup;
   data = sessionStorage.getItem('user');
+  exist: number = 0;
+  message: string = '';
 
   constructor(
     private questionService: QuestionService,
@@ -18,18 +20,21 @@ export class CreateComponent {
 
   ngOnInit(): void {
     this.questionForm = this.formBuilder.group({
-      question: ['', [Validators.required, Validators.maxLength(200)]],
+      text: ['', [Validators.required, Validators.maxLength(200)]],
     });
-
-    // this.questionService.getQuestions().subscribe(
-    //   (result) => {
-    //     console.log(result);
-    //   },
-    //   (err) => {}
-    // );
   }
 
   onSubmit() {
-    this.questionService.addQuestion(this.questionForm.value).subscribe();
+    this.questionService.getQuestions().subscribe((questions) => {
+      console.log(questions);
+      this.exist = questions.filter(
+        (question: any) => question.text === this.questionForm.value.text
+      ).length;
+      if (this.exist === 1) {
+        this.message = 'This question already exist, please choose a new one.';
+      } else {
+        this.questionService.addQuestion(this.questionForm.value).subscribe();
+      }
+    });
   }
 }

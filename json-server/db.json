@@ -2,46 +2,52 @@
   "questions": [
     {
       "id": 1,
-      "question": "Do you live in Boulder?",
+      "text": "Do you live in Boulder?",
       "timestamp": 1682244039541
     },
     {
       "id": 2,
-      "question": "Are you a student?",
+      "text": "Are you a student?",
       "timestamp": 1682244039542
     },
     {
       "id": 3,
-      "question": "Do you play any sport?",
+      "text": "Do you play any sport?",
       "timestamp": 1682244039543
     },
     {
       "id": 4,
-      "question": "Do you play a music instrument?",
+      "text": "Do you play a music instrument?",
       "timestamp": 1682244039544
     },
     {
       "id": 5,
-      "question": "Do you own a dog?",
+      "text": "Do you own a dog?",
       "timestamp": 1682244039545
     },
     {
-      "question": "plop",
+      "text": "plop",
       "username": "todo",
       "timestamp": 1682280736309,
       "id": 6
     },
     {
-      "question": "sffsdf",
+      "text": "sffsdf",
       "username": "todo",
       "timestamp": 1682280751008,
       "id": 7
     },
     {
-      "question": "hello",
+      "text": "hello",
       "username": "dsf",
       "timestamp": 1682281056370,
       "id": 8
+    },
+    {
+      "text": "vcvcvdfv",
+      "username": "qqqq",
+      "timestamp": 1682282911778,
+      "id": 9
     }
   ],
   "votes": [

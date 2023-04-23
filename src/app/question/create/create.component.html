@@ -1,3 +1,4 @@
+<a routerLink="/home"> Homepage</a>
 <h1>Create a new question</h1>
 
 <form [formGroup]="questionForm" (ngSubmit)="onSubmit()">
@@ -7,23 +8,23 @@
       <textarea
         class="form-control"
         type="textarea"
-        name="question"
-        id="question"
-        formControlName="question"
+        name="text"
+        id="text"
+        formControlName="text"
         row="3"
       ></textarea>
       <div
         *ngIf="
-          questionForm.controls['question'].invalid &&
-          (questionForm.controls['question'].dirty ||
-            questionForm.controls['question'].touched)
+          questionForm.controls['text'].invalid &&
+          (questionForm.controls['text'].dirty ||
+            questionForm.controls['text'].touched)
         "
         class="error-msg"
       >
-        <div *ngIf="questionForm.controls['question'].errors?.required">
+        <div *ngIf="questionForm.controls['text'].errors?.required">
           This field is required
         </div>
-        <div *ngIf="questionForm.controls['question'].errors?.maxlength">
+        <div *ngIf="questionForm.controls['text'].errors?.maxlength">
           200 characters maximum are allowed
         </div>
       </div>
@@ -39,4 +40,5 @@
       Save
     </button>
   </div>
+  {{ message }}
 </form>

@@ -10,7 +10,6 @@ import { VoteService } from 'src/app/core/services/vote.service';
 })
 export class ResultsComponent {
   questions: any[] = [];
-  // nbVotes: number;
 
   constructor(
     private voteService: VoteService,
@@ -47,17 +46,5 @@ export class ResultsComponent {
       },
       (err) => {}
     );
-  }
-
-  getNbVotes(questionId: number) {
-    console.log('tttt');
-    this.voteService.getVoteByQuestionId(questionId).subscribe(
-      (votes) => {
-        console.log('sadfsd', votes);
-        // this.questions = result;
-      },
-      (err) => {}
-    );
-    // return 2;
   }
 }

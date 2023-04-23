@@ -20,10 +20,9 @@ export class QuestionService {
   }
 
   addQuestion(value: any): Observable<any> {
-    console.log(value);
     return this.http
       .post(this.baseAPI + this.questionUrl, {
-        question: value.question,
+        text: value.text,
         username: this.user,
         timestamp: Date.now(),
       })
