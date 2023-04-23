@@ -9,6 +9,7 @@ import { QuestionService } from 'src/app/core/services/question.service';
 })
 export class CreateComponent {
   questionForm!: FormGroup;
+  data = sessionStorage.getItem('user');
 
   constructor(
     private questionService: QuestionService,

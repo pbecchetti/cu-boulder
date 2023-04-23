@@ -12,46 +12,62 @@
     },
     {
       "id": 3,
-      "question": "Do you play soccer?",
+      "question": "Do you play any sport?",
       "timestamp": 1682244039543
     },
     {
       "id": 4,
-      "question": "dfsaf",
+      "question": "Do you play a music instrument?",
       "timestamp": 1682244039544
     },
     {
       "id": 5,
-      "question": "dsfaagf?",
+      "question": "Do you own a dog?",
       "timestamp": 1682244039545
     },
     {
-      "question": "sds",
+      "question": "plop",
+      "username": "todo",
+      "timestamp": 1682280736309,
       "id": 6
     },
     {
-      "question": "sssssss",
+      "question": "sffsdf",
+      "username": "todo",
+      "timestamp": 1682280751008,
       "id": 7
     },
     {
-      "question": "rew",
-      "username": "ytestpopo",
+      "question": "hello",
+      "username": "dsf",
+      "timestamp": 1682281056370,
       "id": 8
-    },
-    {
-      "question": "yo",
-      "username": "ytestpopo",
-      "timestamp": "2023-04-22T22:43:20.764Z",
-      "id": 9
-    },
-    {
-      "question": "dfghj",
-      "username": "todo",
-      "timestamp": 1682244039542,
-      "id": 10
     }
   ],
   "votes": [
-    {}
+    {
+      "id": 1,
+      "questionId": 1,
+      "response": 0,
+      "user": "34567"
+    },
+    {
+      "id": 2,
+      "questionId": 1,
+      "response": 1,
+      "user": "345r7"
+    },
+    {
+      "id": 3,
+      "questionId": 2,
+      "response": 1,
+      "user": "345ws67"
+    },
+    {
+      "id": 4,
+      "questionId": 1,
+      "response": 1,
+      "user": "345wf67"
+    }
   ]
 }

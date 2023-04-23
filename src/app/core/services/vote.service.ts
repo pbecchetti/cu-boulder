@@ -1,37 +1,36 @@
-import { Injectable } from '@angular/core';
-import { Observable, catchError, map, retry, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import {
+  Observable,
+  catchError,
+  filter,
+  groupBy,
+  map,
+  mergeAll,
+  mergeMap,
+  retry,
+  throwError,
+  toArray,
+} from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class QuestionService {
+export class VoteService {
   private baseAPI = 'http://localhost:3000';
-  private questionUrl = '/questions';
+  private voteUrl = '/votes';
 
   constructor(private http: HttpClient) {}
 
-  user = sessionStorage.getItem('user');
-
-  getQuestions(): Observable<any> {
+  getVoteByQuestionId(questionId: number): Observable<any> {
     return this.http
-      .get(this.baseAPI + this.questionUrl)
-      .pipe(retry(1), catchError(this.handleError));
-  }
-
-  addQuestion(value: any): Observable<any> {
-    console.log(value);
-    return this.http
-      .post(this.baseAPI + this.questionUrl, {
-        question: value.question,
-        username: this.user,
-        timestamp: Date.now(),
-      })
+      .get(this.baseAPI + this.voteUrl + '?questionId=' + questionId)
       .pipe(retry(1), catchError(this.handleError));
   }
 
   // Error handling
   handleError(error: any) {
+    console.log('09');
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       // Get client-side error
