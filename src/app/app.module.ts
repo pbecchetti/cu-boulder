@@ -9,10 +9,24 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { CreateComponent } from './question/create/create.component';
 import { VoteComponent } from './question/vote/vote.component';
 import { ResultsComponent } from './question/results/results.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, SignInComponent, HomepageComponent, CreateComponent, VoteComponent, ResultsComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  declarations: [
+    AppComponent,
+    SignInComponent,
+    HomepageComponent,
+    CreateComponent,
+    VoteComponent,
+    ResultsComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
