@@ -9,7 +9,6 @@ import { QuestionService } from 'src/app/core/services/question.service';
 })
 export class CreateComponent {
   questionForm!: FormGroup;
-  data = sessionStorage.getItem('user');
   exist: number = 0;
   message: string = '';
 

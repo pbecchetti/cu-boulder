@@ -19,7 +19,10 @@ export class ResultsComponent {
   ngOnInit(): void {
     this.questionService.getQuestions().subscribe(
       (result) => {
-        this.questions = result;
+        this.questions = result.sort(
+          (a: any, b: any) =>
+            new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+        );
         this.questions.forEach((question) => {
           this.voteService
             .getVoteByQuestionId(question.id)

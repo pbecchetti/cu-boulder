@@ -1,17 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {
-  Observable,
-  catchError,
-  filter,
-  groupBy,
-  map,
-  mergeAll,
-  mergeMap,
-  retry,
-  throwError,
-  toArray,
-} from 'rxjs';
+import { Observable, catchError, retry, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -25,6 +14,12 @@ export class VoteService {
   getVoteByQuestionId(questionId: number): Observable<any> {
     return this.http
       .get(this.baseAPI + this.voteUrl + '?questionId=' + questionId)
+      .pipe(retry(1), catchError(this.handleError));
+  }
+
+  getVotes(): Observable<any> {
+    return this.http
+      .get(this.baseAPI + this.voteUrl)
       .pipe(retry(1), catchError(this.handleError));
   }
 

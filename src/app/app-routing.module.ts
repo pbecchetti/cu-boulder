@@ -33,7 +33,7 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'votes',
+    path: 'vote',
     component: VoteComponent,
     pathMatch: 'full',
   },

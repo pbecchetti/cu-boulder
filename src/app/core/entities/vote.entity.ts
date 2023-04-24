@@ -1,5 +1,6 @@
 export interface Vote {
+  id?: number;
   questionID: number;
-  vote: boolean;
+  response: boolean;
   user: string;
 }

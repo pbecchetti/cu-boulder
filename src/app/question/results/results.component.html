@@ -1,8 +1,8 @@
-<p>results works!</p>
+<a routerLink="/home"> Homepage</a>
 <div class="questions" *ngFor="let question of questions">
   <div class="question">
     Question:
-    {{ question.question }}
+    {{ question.text }}
   </div>
   <div class="Vote">Nb of votes: {{ question.nbVoteTotal }}</div>
   <div class="Vote">Nb of votes Yes: {{ question.percentageYes }}%</div>
