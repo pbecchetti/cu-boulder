@@ -10,6 +10,7 @@ import { CreateComponent } from './question/create/create.component';
 import { VoteComponent } from './question/vote/vote.component';
 import { ResultsComponent } from './question/results/results.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './shared/header/header.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     CreateComponent,
     VoteComponent,
     ResultsComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
