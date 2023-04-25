@@ -1,36 +1,16 @@
-<a routerLink="/home"> Homepage</a>
 <form [formGroup]="voteForm" (ngSubmit)="onSubmit()">
-  <div class="section">
-    <h2>Votes</h2>
-
-    <div class="questions" *ngFor="let question of questionsFiltered">
-      <!-- <div class="form-group">
-        Question:
-        {{ question.text }}
-      </div> -->
-
-      <div class="form-group">
-        {{ question.text }}
-        <div
-          class="btn-group btn-group-toggle"
-          ngbRadioGroup
-          name="vote"
-          formControlName="vote"
-          id="vote"
-        >
-          <label ngbButtonLabel class="radio-form">
-            <input ngbButton type="radio" [value]="'true'" />
-            Yes
-          </label>
-          <label ngbButtonLabel class="radio-form right-radio">
-            <input ngbButton type="radio" [value]="'false'" />
-            No
-          </label>
-        </div>
+  <div [formGroup]="voteForm">
+    <div formArrayName="votes">
+      <div
+        class="input-wrapper"
+        *ngFor="let vote of votes.controls; let i = index"
+      >
+        {{ questionsFiltered[i].text }}
+        <input formControlName="{{ i }}" type="radio" [value]="true" />Yes
+        <input formControlName="{{ i }}" type="radio" [value]="false" />No
       </div>
     </div>
   </div>
-
   <div class="form-group">
     <button
       type="submit"
@@ -38,7 +18,7 @@
       class="btn btn-primary form-btn"
     >
       <i class="bi bi-save"></i>
-      Save
+      Vote
     </button>
   </div>
 </form>

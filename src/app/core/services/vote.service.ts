@@ -11,6 +11,8 @@ export class VoteService {
 
   constructor(private http: HttpClient) {}
 
+  user = sessionStorage.getItem('user');
+
   getVoteByQuestionId(questionId: number): Observable<any> {
     return this.http
       .get(this.baseAPI + this.voteUrl + '?questionId=' + questionId)
@@ -23,9 +25,19 @@ export class VoteService {
       .pipe(retry(1), catchError(this.handleError));
   }
 
+  addVote(questionId: number, vote: boolean): Observable<any> {
+    console.log(questionId, vote, this.user);
+    return this.http
+      .post(this.baseAPI + this.voteUrl, {
+        questionId: questionId,
+        response: vote,
+        user: this.user,
+      })
+      .pipe(retry(1), catchError(this.handleError));
+  }
+
   // Error handling
   handleError(error: any) {
-    console.log('09');
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       // Get client-side error

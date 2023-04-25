@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { QuestionService } from 'src/app/core/services/question.service';
 import { VoteService } from 'src/app/core/services/vote.service';
 
@@ -24,7 +24,7 @@ export class VoteComponent {
 
   ngOnInit(): void {
     this.voteForm = this.formBuilder.group({
-      vote: [''],
+      votes: this.formBuilder.array([]),
     });
 
     this.questionService.getQuestions().subscribe(
@@ -39,15 +39,35 @@ export class VoteComponent {
                   .length === 1
               ) {
                 this.questionsFiltered.splice(index, 1);
+              } else {
+                this.addVote();
               }
             });
         });
+        this.questionsFiltered.sort(
+          (a: any, b: any) =>
+            new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+        );
       },
       (err) => {}
     );
   }
 
+  get votes() {
+    return this.voteForm.get('votes') as FormArray;
+  }
+
+  addVote() {
+    const vote = new FormControl([]);
+    this.votes.push(vote);
+  }
+
   onSubmit() {
-    console.log(this.voteForm.value);
+    this.voteForm.value.votes.forEach((vote: boolean, index: number) => {
+      if (vote === true || vote === false) {
+        let questionId = this.questionsFiltered[index].id;
+        this.voteService.addVote(questionId, vote).subscribe();
+      }
+    });
   }
 }

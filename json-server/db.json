@@ -68,42 +68,68 @@
       "id": 12
     },
     {
-      "text": "it's ne",
+      "text": "itoo",
       "username": "qqqq",
       "timestamp": 1682368370390,
       "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "id": 15
+    },
+    {
+      "text": "teeeeeee",
+      "username": "popo",
+      "timestamp": 1682451908243,
+      "id": 16
     }
   ],
   "votes": [
     {
       "id": 1,
       "questionId": 1,
-      "response": 0,
+      "response": true,
       "user": "34567"
     },
     {
       "id": 2,
       "questionId": 1,
-      "response": 1,
+      "response": false,
       "user": "345r7"
     },
     {
       "id": 3,
       "questionId": 2,
-      "response": 1,
+      "response": false,
       "user": "345ws67"
     },
     {
       "id": 4,
       "questionId": 1,
-      "response": 1,
+      "response": true,
       "user": "345wf67"
     },
     {
       "id": 4,
       "questionId": 13,
-      "response": 1,
+      "response": true,
       "user": "qqqq"
+    },
+    {
+      "question": "sds",
+      "id": 5
+    },
+    {
+      "question": "sds",
+      "id": 6
+    },
+    {
+      "questionId": 16,
+      "response": true,
+      "user": "popo",
+      "id": 7
     }
   ]
 }
