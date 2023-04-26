@@ -23,6 +23,7 @@ import {
   MAT_SNACK_BAR_DEFAULT_OPTIONS,
   MatSnackBarModule,
 } from '@angular/material/snack-bar';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {
     VoteComponent,
     ResultsComponent,
     HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
