@@ -29,6 +29,7 @@ export class VoteComponent {
     this.voteForm = this.formBuilder.group({
       votes: this.formBuilder.array([]),
     });
+    this.user = this.voteService.getNewUser(this.user);
 
     this.questionService.getQuestions().subscribe(
       (result) => {
