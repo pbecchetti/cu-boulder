@@ -1,5 +1,21 @@
-<!-- if username -->
-<a routerLink="/create"> Create a new question </a><br />
-<a routerLink="/vote"> Vote on questions </a><br />
-<a routerLink="/results"> View results </a>
-<!-- if not user : signin -->
+<mat-card>
+  <mat-card-header><mat-card-title>Homepage</mat-card-title></mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item
+        ><mat-icon>add_circle</mat-icon
+        ><a routerLink="/create"> Create a new question </a></mat-list-item
+      >
+      <mat-divider></mat-divider>
+      <mat-list-item
+        ><mat-icon>how_to_vote</mat-icon
+        ><a routerLink="/vote"> Vote on questions </a></mat-list-item
+      >
+      <mat-divider></mat-divider>
+      <mat-list-item
+        ><mat-icon> pie_chart</mat-icon>
+        <a routerLink="/results"> View results </a></mat-list-item
+      >
+    </mat-list>
+  </mat-card-content>
+</mat-card>

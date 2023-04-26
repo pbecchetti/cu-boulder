@@ -1,44 +1,45 @@
-<a routerLink="/home"> Homepage</a>
-<h1>Create a new question</h1>
-
-<form [formGroup]="questionForm" (ngSubmit)="onSubmit()">
-  <div class="section">
-    <h2>You can write a new question below:</h2>
-    <div class="form-group">
-      <textarea
-        class="form-control"
-        type="textarea"
-        name="text"
-        id="text"
-        formControlName="text"
-        row="3"
-      ></textarea>
-      <div
-        *ngIf="
-          questionForm.controls['text'].invalid &&
-          (questionForm.controls['text'].dirty ||
-            questionForm.controls['text'].touched)
-        "
-        class="error-msg"
-      >
-        <div *ngIf="questionForm.controls['text'].errors?.required">
-          This field is required
-        </div>
-        <div *ngIf="questionForm.controls['text'].errors?.maxlength">
-          200 characters maximum are allowed
-        </div>
+<app-header></app-header>
+<mat-card>
+  <mat-card-header
+    ><mat-card-title>Create a new question</mat-card-title></mat-card-header
+  >
+  <mat-card-content>
+    <form [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+      <div class="section">
+        <mat-form-field class="example-full-width">
+          <textarea
+            matInput
+            name="text"
+            id="text"
+            formControlName="text"
+          ></textarea>
+          <div
+            *ngIf="
+              questionForm.controls['text'].invalid &&
+              (questionForm.controls['text'].dirty ||
+                questionForm.controls['text'].touched)
+            "
+            class="error-msg"
+          >
+            <div *ngIf="questionForm.controls['text'].errors?.required">
+              This field is required
+            </div>
+            <div *ngIf="questionForm.controls['text'].errors?.maxlength">
+              200 characters maximum are allowed
+            </div>
+          </div>
+        </mat-form-field>
       </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <button
-      type="submit"
-      [disabled]="!questionForm.valid"
-      class="btn btn-primary form-btn"
-    >
-      <i class="bi bi-save"></i>
-      Save
-    </button>
-  </div>
-  {{ message }}
-</form>
+
+      <button
+        type="submit"
+        [disabled]="!questionForm.valid"
+        mat-raised-button
+        color="primary"
+      >
+        Save
+      </button>
+      {{ message }}
+    </form>
+  </mat-card-content>
+</mat-card>

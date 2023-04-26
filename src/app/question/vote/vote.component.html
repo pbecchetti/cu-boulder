@@ -1,24 +1,43 @@
-<form [formGroup]="voteForm" (ngSubmit)="onSubmit()">
-  <div [formGroup]="voteForm">
-    <div formArrayName="votes">
-      <div
-        class="input-wrapper"
-        *ngFor="let vote of votes.controls; let i = index"
-      >
-        {{ questionsFiltered[i].text }}
-        <input formControlName="{{ i }}" type="radio" [value]="true" />Yes
-        <input formControlName="{{ i }}" type="radio" [value]="false" />No
+<app-header></app-header>
+<mat-card>
+  <mat-card-header><mat-card-title>Votes</mat-card-title></mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="voteForm" (ngSubmit)="onSubmit()">
+      <div [formGroup]="voteForm">
+        <div formArrayName="votes">
+          <div
+            class="input-wrapper questions"
+            *ngFor="let vote of votes.controls; let i = index"
+          >
+            <div class="question">{{ questionsFiltered[i].text }}</div>
+            <div class="radio-btn">
+              <input
+                formControlName="{{ i }}"
+                type="radio"
+                [value]="true"
+                class="radio"
+              />Yes
+              <input
+                formControlName="{{ i }}"
+                type="radio"
+                [value]="false"
+                class="radio"
+              />No
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <button
-      type="submit"
-      [disabled]="!voteForm.valid"
-      class="btn btn-primary form-btn"
-    >
-      <i class="bi bi-save"></i>
-      Vote
-    </button>
-  </div>
-</form>
+      <div class="form-group">
+        <button
+          type="submit"
+          [disabled]="!voteForm.valid"
+          mat-raised-button
+          color="primary"
+        >
+          Vote
+        </button>
+        <div>{{ message }}</div>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

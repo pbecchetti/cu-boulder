@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Question } from 'src/app/core/entities/question.entity';
 import { QuestionService } from 'src/app/core/services/question.service';
 import { VoteService } from 'src/app/core/services/vote.service';
 
@@ -29,10 +28,10 @@ export class ResultsComponent {
             .subscribe((resultQuestion) => {
               question.nbVoteTotal = resultQuestion.length;
               let nbYes = resultQuestion.filter(
-                (vote: any) => vote.response === 1
+                (vote: any) => vote.response === true
               ).length;
               let nbNo = resultQuestion.filter(
-                (vote: any) => vote.response === 0
+                (vote: any) => vote.response === false
               ).length;
               if (nbYes) {
                 question.percentageYes = Math.round(

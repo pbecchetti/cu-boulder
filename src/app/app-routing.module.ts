@@ -6,10 +6,18 @@ import { CreateComponent } from './question/create/create.component';
 import { VoteComponent } from './question/vote/vote.component';
 import { ResultsComponent } from './question/results/results.component';
 
+//the best way would be ti use guards
+var route: string;
+if (sessionStorage.getItem('user')) {
+  route = 'home';
+} else {
+  route = 'sign-in';
+}
+
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'sign-in',
+    redirectTo: route,
     pathMatch: 'full',
   },
   {
