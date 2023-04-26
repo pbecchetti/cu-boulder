@@ -35,9 +35,22 @@ export class VoteService {
       .post(this.baseAPI + this.voteUrl, {
         questionId: questionId,
         response: vote,
-        user: this.user,
+        user: this.getNewUser(this.user),
       })
       .pipe(retry(1), catchError(this.handleError));
+  }
+
+  //simple method to not having a clear username for votes (better to user JWT or even hash)
+  getNewUser(user: string | null): string {
+    let arrUser = user?.split('');
+    let arr1: string[] = [];
+    let arr2: string[] = [];
+    arrUser?.forEach((char, index) => {
+      if (index % 2) {
+        arr1.push(char);
+      } else arr2.push(char);
+    });
+    return arr1.concat(arr2).join('');
   }
 
   // Error handling
