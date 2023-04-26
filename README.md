@@ -17,6 +17,8 @@ The routes you can call are:
 `http://localhost:3000/votes` with a list of all the votes
 Those routes accept GET/POST/UPDATE, etc...
 
+I didn't use Java since 10+ years so I didn't feel confident enough using it here,although I created the files I guess we would need, they're in /json-server/java-files
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.

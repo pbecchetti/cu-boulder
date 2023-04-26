@@ -1,0 +1,27 @@
+DROP TABLE IF EXISTS questions;
+
+CREATE TABLE questions (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  TEXT VARCHAR(200) NOT NULL,
+  TIMESTAMP NUMBER,
+  USERNAME VARCHAR(250)
+);
+
+INSERT INTO questions (TEXT, TIMESTAMP, USERNAME) VALUES
+  ('Do you live in Boulder?', 1682196826),
+  ('Are you a student?', 1682200426),
+  ('Do you play any sport?', 1682197006),
+  ('Do you play a music instrument?', 1682282927),
+  ('Do you own a dog?', 1682099713)
+
+DROP TABLE IF EXISTS votes;
+
+CREATE TABLE votes (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  QUESTIONID INT NOT NULL,
+  RESPONSE BOOLEAN  NOT NULL,
+  USER VARCHAR(250) NOT NULL
+);
+
+INSERT INTO votes (QUESTIONID, RESPONSE, USER) VALUES
+  (1,1,true,'Pauline')

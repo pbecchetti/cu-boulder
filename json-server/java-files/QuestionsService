@@ -1,0 +1,18 @@
+@Component
+public class QuestionsService {
+
+	private QuestionsRepository questionsRepository;
+
+    public QuestionsService(QuestionsRepository questionsRepository) {
+        this.questionsRepository = questionsRepository;
+    }
+
+    public List<Questions> getQuestions() {
+        return questionsRepository.findAll();
+    }
+
+    public Users addQuestion(Questions questions) {
+    	return votesRepository.save(questions);
+    }
+
+}
