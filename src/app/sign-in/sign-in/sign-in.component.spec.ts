@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SignInComponent } from './sign-in.component';
 
@@ -8,9 +9,9 @@ describe('SignInComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SignInComponent ]
-    })
-    .compileComponents();
+      imports: [FormsModule, ReactiveFormsModule],
+      declarations: [SignInComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SignInComponent);
     component = fixture.componentInstance;
@@ -19,5 +20,18 @@ describe('SignInComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should submit the sign-in form successfully', () => {
+    const form = component.signinForm;
+
+    // Default validity
+    expect(form.valid).toBeFalsy();
+
+    form.setValue({
+      username: 'test',
+    });
+
+    expect(form.valid).toBeTruthy();
   });
 });
