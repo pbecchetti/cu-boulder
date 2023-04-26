@@ -6,8 +6,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## REST API
 
-In order to mock an API and get data, a json server had been create
-In your terminal type:
+In order to mock an API and get data, a json server had been created
+In your terminal, in your project repo, type:
 
 - cd json-server
 - json-server --watch db.json
@@ -17,7 +17,9 @@ The routes you can call are:
 `http://localhost:3000/votes` with a list of all the votes
 Those routes accept GET/POST/UPDATE, etc...
 
-I didn't use Java since 10+ years so I didn't feel confident enough using it here,although I created the files I guess we would need, they're in /json-server/java-files
+db.json is filed with 5 questions and 1 vote as an example.
+
+I didn't use Java since 10+ years so I didn't feel confident enough using it here,although I created the files we thought we would nee to make the API works, they're under the repo /json-server/java-files
 
 ## Build
 
