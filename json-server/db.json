@@ -24,48 +24,6 @@
       "id": 5,
       "text": "Do you own a dog?",
       "timestamp": 1682099713
-    },
-    {
-      "text": "new question",
-      "username": "pauline",
-      "timestamp": 1682502072589,
-      "id": 6
-    },
-    {
-      "text": "pao",
-      "username": "pauline",
-      "timestamp": 1682502307744,
-      "id": 7
-    },
-    {
-      "text": "rrr",
-      "username": "pauline",
-      "timestamp": 1682502667559,
-      "id": 8
-    },
-    {
-      "text": "fuck ",
-      "username": "pauline",
-      "timestamp": 1682510242582,
-      "id": 9
-    },
-    {
-      "text": "sdfs",
-      "username": "pauline",
-      "timestamp": 1682510442053,
-      "id": 10
-    },
-    {
-      "text": "rtyuikol",
-      "username": "pauline",
-      "timestamp": 1682511303661,
-      "id": 11
-    },
-    {
-      "text": "dfghuji",
-      "username": "pauline",
-      "timestamp": 1682511310811,
-      "id": 12
     }
   ],
   "votes": [
@@ -73,55 +31,7 @@
       "id": 1,
       "questionId": 1,
       "response": true,
-      "user": "34567"
-    },
-    {
-      "questionId": 6,
-      "response": true,
-      "user": "pauline",
-      "id": 2
-    },
-    {
-      "questionId": 7,
-      "response": false,
-      "user": "pauline",
-      "id": 3
-    },
-    {
-      "questionId": 3,
-      "response": true,
-      "user": "pauline",
-      "id": 4
-    },
-    {
-      "questionId": 1,
-      "response": true,
-      "user": "pauline",
-      "id": 5
-    },
-    {
-      "questionId": 2,
-      "response": false,
-      "user": "pauline",
-      "id": 6
-    },
-    {
-      "questionId": 8,
-      "response": false,
-      "user": "pauline",
-      "id": 7
-    },
-    {
-      "questionId": 10,
-      "response": false,
-      "user": "pauline",
-      "id": 8
-    },
-    {
-      "questionId": 4,
-      "response": false,
-      "user": "pauline",
-      "id": 9
+      "user": "pauline"
     }
   ]
 }

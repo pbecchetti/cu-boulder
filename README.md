@@ -1,14 +1,21 @@
-# CuBoulder
+# CU-Boulder-test
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
-
-## Development server
+## Front End
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## REST API
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+In order to mock an API and get data, a json server had been create
+In your terminal type:
+
+- cd json-server
+- json-server --watch db.json
+
+The routes you can call are:
+`http://localhost:3000/questions` with a list of all the questions
+`http://localhost:3000/votes` with a list of all the votes
+Those routes accept GET/POST/UPDATE, etc...
 
 ## Build
 
@@ -24,4 +31,4 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page. -->
