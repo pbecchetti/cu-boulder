@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+
 import { QuestionService } from 'src/app/core/services/question.service';
 
 @Component({
@@ -29,10 +30,10 @@ export class CreateComponent {
 
   onSubmit() {
     this.questionService.getQuestions().subscribe((questions) => {
-      console.log(questions);
       this.exist = questions.filter(
         (question: any) => question.text === this.questionForm.value.text
       ).length;
+      //check if the question has already been submitted
       if (this.exist === 1) {
         this.message = 'This question already exist, please choose a new one.';
       } else {

@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class AuthenticationService {
   constructor() {}
 
+  //store username in sessionStorage
   signin(value: any): any {
     sessionStorage.setItem('user', value);
   }

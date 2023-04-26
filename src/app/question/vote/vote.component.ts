@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+
 import { QuestionService } from 'src/app/core/services/question.service';
 import { VoteService } from 'src/app/core/services/vote.service';
 
@@ -14,10 +15,7 @@ export class VoteComponent {
   user = sessionStorage.getItem('user');
   voteForm!: FormGroup;
 
-  votesFiltered: any[] = [];
-  questions: any[] = [];
   questionsFiltered: any[] = [];
-  message: string = '';
 
   constructor(
     private voteService: VoteService,
@@ -45,12 +43,13 @@ export class VoteComponent {
               .getVoteByQuestionId(question.id)
               .subscribe((resultQuestion) => {
                 if (
+                  //checking if the user already responded to the question before
                   resultQuestion.filter((vote: any) => vote.user === this.user)
                     .length === 1
                 ) {
-                  console.log(index);
                   this.questionsFiltered.splice(index, 1);
                 } else {
+                  //we create dynamically a new Form radio button for each votes
                   this.addVote();
                 }
               });
@@ -73,12 +72,10 @@ export class VoteComponent {
     this.voteForm.value.votes.forEach((vote: boolean, index: number) => {
       if (vote === true || vote === false) {
         let questionId = this.questionsFiltered[index].id;
-        this.voteService
-          .addVote(questionId, vote)
-          .subscribe({
-            next: this.handleSuccessResponse.bind(this),
-            error: this.handleError.bind(this),
-          });
+        this.voteService.addVote(questionId, vote).subscribe({
+          next: this.handleSuccessResponse.bind(this),
+          error: this.handleError.bind(this),
+        });
       }
     });
   }

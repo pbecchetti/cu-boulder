@@ -1,5 +1,5 @@
+import { Observable, catchError, retry, throwError } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, map, retry, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -13,12 +13,14 @@ export class QuestionService {
 
   user = sessionStorage.getItem('user');
 
+  //get all the questions
   getQuestions(): Observable<any> {
     return this.http
       .get(this.baseAPI + this.questionUrl)
       .pipe(retry(1), catchError(this.handleError));
   }
 
+  //add a new question in the DB with 3 mandatory parameters(the question, the user adding the question and the timestamp)
   addQuestion(value: any): Observable<any> {
     return this.http
       .post(this.baseAPI + this.questionUrl, {
@@ -39,7 +41,6 @@ export class QuestionService {
       // Get server-side error
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-    console.log(errorMessage);
     return throwError(() => error);
   }
 }
