@@ -19,7 +19,7 @@ Those routes accept GET/POST/UPDATE, etc...
 
 db.json is filed with 5 questions and 1 vote as an example.
 
-I didn't use Java since 10+ years so I didn't feel confident enough using it here,although I created the files we thought we would nee to make the API works, they're under the repo /json-server/java-files
+I didn't use Java since 10+ years so I didn't feel confident enough using it here,although I created the files I thought we would need to make the API works, they're under the repo /json-server/java-files
 
 ## Build
 

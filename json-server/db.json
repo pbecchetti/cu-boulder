@@ -32,18 +32,6 @@
       "questionId": 1,
       "response": true,
       "user": "pauline"
-    },
-    {
-      "questionId": 4,
-      "response": false,
-      "user": "oy",
-      "id": 2
-    },
-    {
-      "questionId": 3,
-      "response": false,
-      "user": "oy",
-      "id": 3
     }
   ]
 }
