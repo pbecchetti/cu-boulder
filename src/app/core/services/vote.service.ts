@@ -2,11 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, retry, throwError } from 'rxjs';
 
+import { environment } from 'src/environments/environment';
+
 @Injectable({
   providedIn: 'root',
 })
 export class VoteService {
-  private baseAPI = 'http://localhost:3000';
+  private baseAPI = environment.apiBase;
   private voteUrl = '/votes';
 
   constructor(private http: HttpClient) {}

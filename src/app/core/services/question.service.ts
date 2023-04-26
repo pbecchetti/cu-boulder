@@ -2,11 +2,13 @@ import { Observable, catchError, retry, throwError } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { environment } from 'src/environments/environment';
+
 @Injectable({
   providedIn: 'root',
 })
 export class QuestionService {
-  private baseAPI = 'http://localhost:3000';
+  private baseAPI = environment.apiBase;
   private questionUrl = '/questions';
 
   constructor(private http: HttpClient) {}
