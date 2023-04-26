@@ -9,6 +9,7 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   padding: 15px;
   color: #3a3a3a;
+  background-color: aliceblue;
 }
 .questions {
   border: 1px solid lightgrey;
